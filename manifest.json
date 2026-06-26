@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "SEO Audit Toolkit",
+  "version": "1.0.0",
+  "description": "Analyze headings, images, links, metadata and technical SEO structure directly from your browser.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "SEO Audit Toolkit"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "permissions": ["storage", "sidePanel", "activeTab", "scripting"],
+  "icons": {
+    "16": "16x16.png",
+    "48": "48x48.png",
+    "128": "128x128.png"
+  }
+}

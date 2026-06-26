@@ -1,0 +1,1 @@
+var e=`options`,t=`allowed_urls`;export{e as n,t};
